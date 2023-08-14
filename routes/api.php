@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/returnContent', [\App\Http\Controllers\TestController::class, 'returnContent']);
+Route::get('/throwExpectedError', [\App\Http\Controllers\TestController::class, 'throwExpectedError']);
+Route::get('/throwUnexpectedError', [\App\Http\Controllers\TestController::class, 'throwUnexpectedError']);
+Route::get('/validateString', [\App\Http\Controllers\TestController::class, 'validateString']);
 

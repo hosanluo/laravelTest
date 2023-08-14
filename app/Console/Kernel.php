@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Repositories\ErrorLog;
+use App\Repositories\RequestLog;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,6 +15,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->call(function (RequestLog $requestLog, ErrorLog $errorLog) {
+            # 定时任务创建数据表
+
+        })->dailyAt("23:59");
     }
 
     /**
